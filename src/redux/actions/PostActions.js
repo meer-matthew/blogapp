@@ -1,0 +1,5 @@
+export const PostActions = {
+  CREATE_POST: "CREATE_POST",
+  SHOW_POSTS: "SHOW_POSTS",
+  DELETE_POSTS: "DELETE_POSTS",
+};

@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Switch, Route, Routes } from "react-router-dom";
+import BackgroundPage from "./pages/BackgroundPage";
+import LoginPage from "./pages/Login/Login/LoginPage";
+import HomePage from "./pages/Homepage/HomePage";
+import SideNavigation from "./pages/Homepage/components/SideNavigation";
+import ProfilePage from "./pages/Profile/ProfilePage";
+import RegistrationPage from "./pages/Login/Registration/RegistrationPage";
+import { useSelector } from "react-redux";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <BackgroundPage>
+        <Routes>
+          <Route path="/" index element={<LoginPage />} />
+          <Route path="/new-user" index element={<RegistrationPage />} />{" "}
+          <Route path="/" index element={<LoginPage />} />
+          <Route path="/new-user" index element={<RegistrationPage />} />
+          <Route path="/home" index element={<HomePage />} />
+          <Route path="/profile" index element={<HomePage />} />
+          <Route path="/notifications" index element={<HomePage />} />
+        </Routes>
+      </BackgroundPage>
+    </Switch>
   );
 }
 

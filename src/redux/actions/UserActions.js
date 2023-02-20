@@ -1,0 +1,6 @@
+export const UserActions = {
+  USER_LOGIN: "USER_LOGIN",
+  GET_USER: "GET_USER",
+  CREATE_USER: "CREATE_USER",
+  UPDATE_USER: "UPDATE_USER",
+};
